@@ -1,0 +1,94 @@
+<div class="container border">
+  <form #ref="ngForm" (ngSubmit)="submitForm(ref)">
+    <div class="form-group mt-4">
+      <label for="userid" class="form-label">Uername</label>
+      <input type="text" name="user" id="userid" class="form-control" ngModel placeholder="username">
+    </div>
+    <div class="form-group mt-4">
+      <label for="passwrd" class="form-label">Password</label>
+      <input type="password" name="pwd" id="passwrd" class="form-control" ngModel placeholder="password">
+    </div>
+    <div class="form-group mt-4">
+      <label for="dob" class="form-label">Date of birth</label>
+      <input type="date" name="dateOfBirth" id="dob"   class="form-control" ngModel placeholder="date of birth">
+    </div>
+  <div class="form-group mt-4">
+    <h4>Select your pg course and fav subject</h4><br>
+    <input type="radio" name="course" id="course1" value="degree" ngModel (change)="selectMca()">
+    <label for="course1" class="m-2">MCA</label>
+  
+  
+  
+    <input type="radio" name="course" id="course2" value="sub" ngModel (change)="selectMba()">
+    <label for="course2" class="m-2">MBA</label>
+    </div>
+  <div>
+    <select name="tech" id="s1" class="form-control" ngModel>
+      <option [value]="tech" *ngFor="let tech of selectedTech">{{tech}}</option>
+    </select>
+    </div>
+  
+    <div class="form-group mt-4">
+      <h4>Select your city from your state</h4><br>
+      <input type="radio" name="state" id="city1" value="state" ngModel (change)="selectState()">
+      <label for="city1" class="m-2">Kerala</label>
+    
+    
+    
+      <input type="radio" name="state" id="city2" value="st" ngModel (change)="selectCity()">
+      <label for="city2" class="m-2">Tamilnadu</label>
+      </div>
+    <div>
+      <select name="city" id="s2" class="form-control" ngModel>
+        <option [value]="feature" *ngFor="let feature of selectedFeatures">{{feature}}</option>
+      </select>
+      </div>
+  
+    
+  
+   <!--<input type="radio" name="lang" id="java" value="javascript" ngModel (change)="selectJavascript()">
+    <label for="java">JAVASCRIPT</label>
+  
+  
+    <input type="radio" name="lang" id="type" value="typescript" ngModel (change)="selectTypescript()">
+    <label for="type">TYPESCRIPT</label>
+  </div>
+  
+  <div>
+    <label for="s">Select your technology </label>
+    <select name="state" id="s" ngModel>
+      <option [value]="feature" *ngFor="let feature of selectedFeatures">{{feature}}</option>
+    </select>
+  </div>-->
+  <div class="container mt-4">
+    <button type="submit" >Register</button>
+  </div>
+  <table class="table">
+    <thead>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Date of birth</th>
+      <th>selectedcourse</th>
+      <th>fav subject</th>
+      <th>selected state</th>
+      <th>fav city</th>
+    </thead>
+      <tr *ngFor="let v of selectedContent">
+        <td>{{v.user}}</td>
+        <td>{{v.pwd}}</td>
+        <td>{{v.dateOfBirth}}</td>
+        <td>{{v.course}}</td>
+        <td>{{v.tech}}</td>
+        <td>{{v.state}}</td>
+        <td>{{v.city}}</td>
+      
+  
+  
+  
+  
+    
+      </tr>
+  
+  </table>
+  </form>
+</div>
